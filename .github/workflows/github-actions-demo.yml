@@ -1,0 +1,38 @@
+name: lab05
+on:
+  push:
+    branches:
+      - master
+jobs:
+  work:
+      runs-on: ubuntu-latest 
+      steps:
+        - uses: action/checkout@v2
+        - name: Download
+          run: sudo apt install g++ cmake
+        - name: Exercise-1
+          run: |
+            cd formatter_lib
+            cmake . -DCMAKE_CXX_COMPILER=g++
+            cmake .
+            make
+            cd ..
+        - name: Exercise-2
+          run: |
+            cd formatter_ex_lib
+            cmake . -DCMAKE_CXX_COMPILER=g++
+            cmake .
+            make
+            cd ..
+        - name: Exercise-3
+          run: |
+            cd hello_world_application
+            cmake . -DCMAKE_CXX_COMPILER=g++
+            cmake .
+            make
+            cd ..
+            cd solver_application
+            cmake . -DCMAKE_CXX_COMPILER=g++
+            cmake .
+            make
+            cd ..
