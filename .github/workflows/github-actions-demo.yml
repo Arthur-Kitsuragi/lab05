@@ -7,7 +7,7 @@ jobs:
   work:
       runs-on: ubuntu-latest 
       steps:
-        - uses: action/checkout@v1
+        - uses: actions/checkout@v2
         - name: Download
           run: sudo apt install g++ cmake
         - name: Exercise-1
